@@ -67,5 +67,9 @@
     <p class="card-text">
       {{ $post->created_at }}
     </p>
+    <p class="card-text">
+      <post-like :initial-is-liked-by='@json($post->isLikedBy(Auth::user()))' :initial-count-likes='@json($post->count_likes)' :authorized='@json(Auth::check())' endpoint="{{ route('posts.like', ['post' => $post]) }}">
+      </post-like>
+    </p>
   </a>
 </div>

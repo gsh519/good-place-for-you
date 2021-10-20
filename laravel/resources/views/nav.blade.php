@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand navbar-dark teal darken-3">
 
-  <a class="navbar-brand" href="/"><i class="fas fa-plane mr-1"></i></i>Good Place for you</a>
+  <a class="navbar-brand" href="/"><i class="fas fa-plane mr-1"></i></i>Goopy グッピー</a>
 
   <ul class="navbar-nav ml-auto">
 
