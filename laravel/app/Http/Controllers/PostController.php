@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use App\Tag;
 use App\Http\Requests\PostRequest;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -21,7 +23,13 @@ class PostController extends Controller
     //記事作成画面
     public function create()
     {
-        return view('posts.create');
+        $allTagNames = Tag::all()->map(function ($tag) {
+            return ['text' => $tag->tag_name];
+        });
+
+        return view('posts.create', [
+            'allTagNames' => $allTagNames,
+        ]);
     }
 
     //記事投稿処理
@@ -30,19 +38,43 @@ class PostController extends Controller
         $post->fill($request->all());
         $post->user_id = $request->user()->id;
         $post->save();
+
+        $request->tags->each(function ($tagName) use ($post) {
+            $tag = Tag::firstOrCreate(['tag_name' => $tagName]);
+            $post->tags()->attach($tag);
+        });
+
         return redirect()->route('posts.index');
     }
 
     //記事編集画面
     public function edit(Post $post)
     {
-        return view('posts.edit', ['post' => $post]);
+        $tagNames = $post->tags->map(function ($tag) {
+            return ['text' => $tag->tag_name];
+        });
+
+        $allTagNames = Tag::all()->map(function ($tag) {
+            return ['text' => $tag->tag_name];
+        });
+
+        return view('posts.edit', [
+            'post' => $post,
+            'tagNames' => $tagNames,
+            'allTagNames' => $allTagNames,
+        ]);
     }
 
     //記事更新処理
     public function update(PostRequest $request, Post $post)
     {
         $post->fill($request->all())->save();
+
+        $post->tags()->detach();
+        $request->tags->each(function ($tagName) use ($post) {
+            $tag = Tag::firstOrCreate(['tag_name' => $tagName]);
+            $post->tags()->attach($tag);
+        });
         return redirect()->route('posts.index');
     }
 

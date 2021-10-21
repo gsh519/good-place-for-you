@@ -8,6 +8,10 @@
   <input type="text" name="good_point" class="form-control" required value="{{ $post->good_point ?? old('good_point') }}">
 </div>
 <div class="form-group">
+  <post-tags-input :initial-tags='@json($tagNames ?? [])' :autocomplete-items='@json($allTagNames ?? [])'>
+  </post-tags-input>
+</div>
+<div class="form-group">
   <label></label>
   <textarea name="body" class="form-control" rows="16" placeholder="本文">{{ $post->body ?? old('body') }}</textarea>
 </div>
