@@ -11,7 +11,7 @@
   <!-- dropdown -->
   <div class="ml-auto card-text">
     <div class="dropdown">
-      <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <a data-mdb-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <button type="button" class="btn btn-link text-muted m-0 p-2">
           <i class="fas fa-ellipsis-v"></i>
         </button>
@@ -21,7 +21,7 @@
           <i class="fas fa-pen mr-1"></i>記事を更新する
         </a>
         <div class="dropdown-divider"></div>
-        <a class="dropdown-item text-danger" data-toggle="modal" data-target="#modal-delete-{{ $post->id }}">
+        <a class="dropdown-item text-danger" data-mdb-toggle="modal" data-mdb-target="#modal-delete-{{ $post->id }}">
           <i class="fas fa-trash-alt mr-1"></i>記事を削除する
         </a>
       </div>
@@ -34,7 +34,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="閉じる">
+          <button type="button" class="close" data-mdb-dismiss="modal" aria-label="閉じる">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>

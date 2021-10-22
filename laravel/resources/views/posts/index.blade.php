@@ -4,6 +4,7 @@
 
 @section('content')
 @include('nav')
+@include('posts.carousel')
 <div class="container">
   <div class="row">
     @foreach($posts as $post)
