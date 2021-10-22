@@ -27,3 +27,32 @@
 .dropdown-divider {
   margin: 0 !important;
 }
+
+.wrap {
+  color: #4d4646;
+  padding: 10px;
+}
+
+.wrap h5 {
+  margin-bottom: 0.5rem;
+}
+
+.wrap p {
+  margin-bottom: 0;
+}
+
+.wrap .flex {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 8px;
+}
+
+.wrap .small {
+  font-size: 14px;
+}
+
+.drop {
+  position: absolute;
+  right: 5%;
+  top: 75%;
+}

@@ -28,3 +28,29 @@
 .dropdown-divider {
   margin: 0 !important;
 }
+
+.wrap {
+  color: rgb(77, 70, 70);
+  padding: 10px;
+  h5 {
+    margin-bottom: 0.5rem;
+  }
+  p {
+    margin-bottom: 0;
+  }
+
+  .flex {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 8px;
+  }
+  .small {
+    font-size: 14px;
+  }
+}
+
+.drop {
+  position: absolute;
+  right: 5%;
+  top: 75%;
+}
