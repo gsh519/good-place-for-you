@@ -24,6 +24,14 @@
   color: #fff;
 }
 
+.card {
+  padding: 0 !important;
+}
+
+.card .wrapper {
+  padding: 5px;
+}
+
 .dropdown-divider {
   margin: 0 !important;
 }

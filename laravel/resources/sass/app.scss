@@ -25,6 +25,13 @@
   }
 }
 
+.card {
+  padding: 0 !important;
+  .wrapper {
+    padding: 5px;
+  }
+}
+
 .dropdown-divider {
   margin: 0 !important;
 }
